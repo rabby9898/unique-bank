@@ -89,6 +89,10 @@
         withdrawBtn.addEventListener('click', function() {
 
             const withdrawNum = inputNumber("addWithdraw");
+            updateSpanText("currentWithdraw", withdrawNum);
+            updateSpanText("balanceAmount", -1 * withdrawNum);
+
+            document.getElementById("addWithdraw").value = "";
 
         })
 
@@ -102,7 +106,7 @@
             const balanceAmount = document.getElementById(id).innerText;
             const balanceNum = parseFloat(balanceAmount);
             const totalBal = depositNum + balanceNum;
-            document.getElementById(id).innerText = totalBal;
+            document.getElementById(id).innerText = totalBal
         }
     </script>
 </body>
